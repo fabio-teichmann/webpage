@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>This is our register:</h2>
+    <!-- div provides sections for styling -->
+    <div> 
+        <!-- Use Get, not POST -->
+        <form action="POST">
+            <!-- span provides styling possibilities to specific elements -->
+            <span>First name: </span><input type="text" name="firstname"><br>
+            Last name: <input type="text" name="lastname"><br>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" min="5" name="password"><br>
+            Birthday: <input type="date" name="birthday"><br>
+            Gender: <br>
+                <input type="radio" name="gender" value="Male"> Male<br>
+                <input type="radio" name="gender" value="Female"> Female<br>
+                <input type="radio" name="gender" value="Other"> Other<br>
+            Pets: <br>
+                <input type="checkbox" name="cat"> Cat<br>
+                <input type="checkbox" name="dog"> Dog<br>
+                <input type="checkbox" name="other"> Other<br>
+            Cars: <br>
+                <select>
+                    <option value="volvo" name="volvo" value="Volvo">Volvo</option>
+                    <option value="audi" name="audi" value="Audi">Audi</option>
+                </select><br>
+            <input type="submit" value="Register!">
+            <input type="reset"><br>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+?firstname=fake
+&lastname=man
+&email=fake%40gmail.com
+&password=12345
+&birthday=2023-01-04
+&gender=on
+&cat=on
