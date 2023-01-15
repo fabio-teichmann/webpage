@@ -45,6 +45,15 @@ p {
   font-family: "Poiret One", cursive;
 }
 
+img {
+  float: left;
+}
+
+footer {
+  clear: both; /* ensure that footer is not adjecent to floating property  */
+  text-align: center;
+}
+
 li {
   list-style: none;
   display: inline-block;

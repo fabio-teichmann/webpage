@@ -1,0 +1,21 @@
+h2 {
+  color: burlywood;
+}
+p {
+  font-size: 20px;
+}
+span {
+  font-size: 3rem; /* In relation to root element (HTML). Unaffected by changes to containing elements. */
+}
+span {
+  font-size: 2em; /* 2 times reletive to containing element (p in our case) = 100px */
+}
+
+.boxmodel {
+  border: 5px solid red;
+  display: inline-block;
+  padding: 5px 20px 5px 20px; /* TOP RIGHT BOTTOM LEFT */
+  margin: 0px 20px; /* shortcut */
+  width: 33px;
+  height: 55px;
+}
