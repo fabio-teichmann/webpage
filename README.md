@@ -13,6 +13,42 @@ Path the browser takes in order to display a website:
 
 # CSS
 
+## Resources
+
+- [CSS Refresher](https://web.dev/learn/css/)
+- [Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+
+## CSS Grid vs. Flexbox vs. Bootstrap
+
+- always a trade-off
+- ideally, used complimentary
+- flexbox good for 1 dimension (cols or rows)
+- CSS grid good for 2 dimensions (cols AND rows)
+- many functionality of Bootstrap4 is enabled through CSS grid
+
+### Usage of CSS Grid
+
+[cheat-sheet](https://grid.malven.co/)
+
+[learning game](http://cssgridgarden.com/)
+
+- encapsulate styling into `container` class
+- activate `display: grid`
+- set `grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))`
+- set `grid-template-rows: 1fr`
+
+```
+.container {
+    display: grid;
+    gap: 20px; /* space between images */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* most important property for grid; 1 entry corresponse to 1 column */
+    /* repeat(num, unit)  ->  repeats unit num-times
+    auto unit ...  ->  adjusts space depending on content of cells */
+    grid-template-rows: 1fr;
+    /* justify-items: start; */
+}
+```
+
 ## Tools / Resources
 
 ### Color Schemes
