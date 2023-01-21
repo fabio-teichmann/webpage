@@ -15,6 +15,8 @@
   - variable has not been assigned
 - Null
 - Symbol (new in ECMAScript 6)
+  - `let sym1 = Symbol();`
+  - create unique type (like an ID)
 - Object
   - collections of properties
 
@@ -78,6 +80,28 @@ array.forEach(function(param, i) {
 })
 ```
 
+### Ternary operator
+
+`condition ? expr1 : expr2;`
+
+- if `condition` === `true` -> return `expr1`
+- else `expr2`
+
+### Switch
+
+```
+switch (param) {
+  case ...:
+    action;
+    break;
+  case ...:
+    action2;
+    break;
+  default:
+    action
+}
+```
+
 ## DataStructs
 
 ### Arrays
@@ -92,4 +116,61 @@ var obj {
   fieldName: value,
   ...
 };
+```
+
+## ES5 and ES6 (ECMAScript)
+
+- currently on version 7
+- each script introduces new functionalities
+- Babel offers ways to use new features
+
+### `let` and `const`
+
+- `let` enables scopes within expressions {} (e.g. IF statements)
+- `let` replaces `var`
+- `const` variables cannot be updated
+  - can update properties of a `const` object (!)
+  - can group assign
+  - can use dynamic properties declaration
+  - if property and value are the same, we can simplify declaration
+  - can use back ticks with assembled strings
+
+```
+const obj {
+  player: "Bobby";
+  experience: 100;
+  wizardLevel: false;
+}
+// can change properties
+obj.wizardLevel = true;
+
+// group assignement
+const { player, experiece } = obj;
+let { wizardLevel } = obj;
+
+// declaring attributes dynamically
+const name = "john";
+
+const obj {
+  [name]: "Bill";
+  ["hi" + " there"]: 5;
+}
+
+// value === property
+const obj {a, b, c}
+
+// assembled strings
+const greeting = `Hello ${name} you seem to be ${age - 10}. What a lovely ${pet}.`;
+```
+
+### Functions
+
+- can assign default values to parameters (like in Python)
+- can declare **arrow functions**
+
+```
+const add = (a,b) => a + b;
+const add = (a,b) => {
+  action
+}
 ```
