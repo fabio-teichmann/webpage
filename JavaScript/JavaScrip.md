@@ -174,3 +174,33 @@ const add = (a,b) => {
   action
 }
 ```
+
+- can operate `closures`
+
+### Closure
+
+- child scope always has access to parent scope, not vice versa
+- helps making it redundant to run/access parent function again
+
+### Currying
+
+- change function to only accept 1 parameter at a time
+- can encapsulate partial functionality
+
+```
+const multiply = (a, b) => a * b;
+vonst curried = (a) => (b) => a * b;
+```
+
+### Compose
+
+- chaines functions together to act on input
+- takes functions as input and returns a function that chains them together to act on a new input
+
+```
+const compose = (f, g) => (a) => f(g(a));
+```
+
+### Avoiding side effects & functional purity
+
+- side effect: everything that a function does to affect ist outside scope
