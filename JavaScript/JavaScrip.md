@@ -109,6 +109,8 @@ switch (param) {
 - can hold functions
 - can hold mixed types // can lead to performance issues
 
+### Advanced Arrays
+
 ### Objects
 
 ```
@@ -204,3 +206,4 @@ const compose = (f, g) => (a) => f(g(a));
 ### Avoiding side effects & functional purity
 
 - side effect: everything that a function does to affect ist outside scope
+- functional purity: functions should not have side effects and returns the same value always (**deterministic**)
