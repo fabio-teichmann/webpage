@@ -1,6 +1,33 @@
 # JavaScript
 
 - enables actions on websites
+- single threaded (1 call stack) language that can be non-blocking (asynchronous execution)
+  - does not have to deal with complicated scenarios that can arise in a multi-threaded environment (e.g. dead locks)
+
+## JavaScript Run-time Environment
+
+- part of the browser
+- contains
+  - JS Engine,
+  - Web APIs (DOM, AJAX, Timeout),
+  - Callback Queue (onClick, onLoad, onDone),
+  - Event Loop (checks whether call stack and callback queue are empty)
+
+## What is a program?
+
+- allocates memory (**memory heap**)
+  - limited space of memory
+  - unused parameters (usually global parameters) can cause **memory leak** == occupied but unused memory
+- parses and executes scripts (**call stack**)
+  - reads in script and places one action after the other on the call stack
+  - from there actions are executed one after the other and removed from stack
+
+## Modules
+
+[ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+
+- a module bundler combines all required .js files into one (e.g. Webpack)
+- eliminates namespace pollution and makes sure that dependencies are met
 
 ## Types
 
