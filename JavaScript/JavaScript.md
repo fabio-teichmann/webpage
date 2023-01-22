@@ -303,3 +303,20 @@ const obj = Object.fromEntries(userProfiles)
 
 - update to `try {} catch (error) {}`
   - the `error` parameter does not need to be included anymore
+
+## ES2020
+
+- `BigInt`
+  - new type in JS
+  - add `n` after number to indicate a number is `BigInt`
+  - can handle numbers above `MAX_SAVE_INTEGER`
+- Nullish coalescing operator `??`
+  - in place of OR `||` operator
+  - handy for `falsy` cases
+- Optional chaining operator `?`
+  - makes checks of nested objects easier
+  - checks for properties in object
+
+```
+let param = obj?.sub-obj?.property;
+```

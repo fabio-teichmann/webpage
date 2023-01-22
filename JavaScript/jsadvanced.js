@@ -27,3 +27,32 @@ const reduceArray = array.reduce((accumulator, num) => {
 }, 0)
 
 console.log("reduce:", reduceArray)
+
+
+// ADVANCED LOOPS
+
+const basket = ['apples', 'oranges', 'grapes'];
+const detailesBasket = {
+    apples: 5,
+    oranges: 10,
+    grapes: 1000
+}
+
+for ( let i =0; i < basket.length; i++) {
+    console.log(basket[i]);
+}
+
+basket.forEach(item => {
+    console.log(item);
+})
+
+// for of (ITERATING)
+for (item of basket) {
+    console.log(item);
+}
+
+// for in (ENUMERATING)
+// works for arrays, but returnes indices
+for (item in detailesBasket) {
+    console.log(item);
+}
