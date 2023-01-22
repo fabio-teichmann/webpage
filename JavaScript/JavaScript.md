@@ -320,3 +320,17 @@ const obj = Object.fromEntries(userProfiles)
 ```
 let param = obj?.sub-obj?.property;
 ```
+
+## ES2021
+
+- `str.replaceAll(from, to)`
+  - replaces all occurrences of `from` to `to`
+  - returns replaced string
+  - `replace()` only replaces the first occurrence
+
+## ES2022
+
+- `.at(index)`
+  - arrays, strings
+  - gets an element at `index`
+- top level await (asynchronous section)
