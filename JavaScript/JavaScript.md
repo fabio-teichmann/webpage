@@ -22,8 +22,9 @@
 
 ## Comparisons
 
-- === equal
+- === equal (**without** type coercion!)
 - !== unequal
+- == equal (**with** type coercion!)
 
 ## Variables
 
@@ -108,16 +109,72 @@ switch (param) {
 
 - can hold functions
 - can hold mixed types // can lead to performance issues
+- is considered an object (not primitive)
+- to copy an array:
 
-### Advanced Arrays
+```
+let array1 = [1, 2, 3];
+let array2 = [].concat(array1);
+```
 
 ### Objects
+
+General declaration:
 
 ```
 var obj {
   fieldName: value,
   ...
 };
+```
+
+- reference type (opposed to `primitive type`)
+  - objects are stored at specific storage locations (like pointers)
+  - objects can only equal if they are referencing the same location
+  - `arrays` are objects, not primitives
+  - how to clone an object (shallow and deep):
+
+```
+let obj = {a: 5};
+let copy1 = Object.assign({}, obj);
+let copy2 = {...obj};
+
+// deep cloning
+// can have performance issues!
+let superClone = JSON.parse(JSON.stringify(obj));
+```
+
+- context vs. scope
+  - `this` refers to the current object it is inside of
+  - that is important for instantiation
+- instantiation
+  - creates a copy of a certain object
+  - through `constructor` method
+  - uses `new` keyword
+
+```
+class Player {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  introduce() {
+    console.log(`Hi, I am ${this.name}, I'm a ${this.type}`);
+  }
+}
+
+class Wizard extends Player {
+  // adds on top of the parent class
+  constructor(name, type) {
+    super(name, type);
+  }
+  play() {
+    console.log(`I am a ${this.type}`);
+  }
+}
+
+// creation of instance
+const wizard1 = new Wizard('Shelly', 'Healer');
 ```
 
 ## ES5 and ES6 (ECMAScript)
