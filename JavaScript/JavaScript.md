@@ -264,3 +264,42 @@ const compose = (f, g) => (a) => f(g(a));
 
 - side effect: everything that a function does to affect ist outside scope
 - functional purity: functions should not have side effects and returns the same value always (**deterministic**)
+
+## ES7 (2016)
+
+- `.includes()` for arrays and strings
+- exponential operator `**`
+
+## ES8 (2017)
+
+- string padding
+  - `.padStart(length)` fills whitespace up to a total length of length
+  - `.padEnd()`
+- trailing commas in functions, parameter list
+  - supports a "left-over" comma on a list
+  - also for calling parameters
+- `Object.values(obj)` and `Object.entries(obj)`
+  - get only values back or key-value pairs in array form
+- Async Await
+
+## ES10 (2019)
+
+- `flat(n)` for arrays
+  - eliminates nested structures in an array by n degrees
+  - default degree = 1
+  - removes empty entries in an array
+- `flatMap(value => returnValue)` for arrays
+  - depth of 1
+  - performs returnValue action
+- `.trimStart()` and `.trimEnd()`
+- formEntries
+  - transforms a list of arrays into object items
+
+```
+userProfiles = [["name", 18], ["name2", 24], ...]
+
+const obj = Object.fromEntries(userProfiles)
+```
+
+- update to `try {} catch (error) {}`
+  - the `error` parameter does not need to be included anymore
