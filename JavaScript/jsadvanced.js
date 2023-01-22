@@ -56,3 +56,16 @@ for (item of basket) {
 for (item in detailesBasket) {
     console.log(item);
 }
+
+// DEBUGGING
+const flettened = [[0,1], [2,3], [4,5]].reduce((accumulator, array) => {
+    console.log('array', array);
+    console.log('accumulator', accumulator);
+    return accumulator.concat(array);
+}, []);
+
+// with debugger
+const flettened2 = [[0,1], [2,3], [4,5]].reduce((accumulator, array) => {
+    debugger; // exec stops here
+    return accumulator.concat(array);
+}, []);
