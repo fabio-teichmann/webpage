@@ -31,3 +31,7 @@
 `npm install` - install project dependencies for setup
 
 `npm run (script)` - runs the script as part of the `package.json`
+
+## Important ressources
+
+[npm semver](https://semver.npmjs.com/) - update packages
