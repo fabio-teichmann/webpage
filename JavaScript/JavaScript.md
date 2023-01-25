@@ -292,6 +292,10 @@ const compose = (f, g) => (a) => f(g(a));
 - side effect: everything that a function does to affect ist outside scope
 - functional purity: functions should not have side effects and returns the same value always (**deterministic**)
 
+# ECMA Script (ES) Updates
+
+[Features] (https://github.com/daumann/ECMAScript-new-features-list)
+
 ## ES7 (2016)
 
 - `.includes()` for arrays and strings
@@ -299,7 +303,7 @@ const compose = (f, g) => (a) => f(g(a));
 
 ## ES8 (2017)
 
-- string padding
+- **string padding**
   - `.padStart(length)` fills whitespace up to a total length of length
   - `.padEnd()`
 - trailing commas in functions, parameter list
@@ -307,7 +311,38 @@ const compose = (f, g) => (a) => f(g(a));
   - also for calling parameters
 - `Object.values(obj)` and `Object.entries(obj)`
   - get only values back or key-value pairs in array form
-- Async Await
+- **Async Await**
+  - make code look asynchronous
+
+```
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // can store result of action
+  await movePlayer(200, 'Left');
+  await movePlayer(400, 'Right');
+  await movePlayer(100, 'Left');
+}
+```
+
+## ES9 (2018)
+
+- **spread operator**
+  - disassembles components of object / array
+  - `const { param1, ...rest } = obj;` --> assign value of `param1` to it and the remaining components are saved in `rest`
+- **`finally`** for promises
+  - executes in any case after all has run
+  - usually does not receive input from `.then` chain
+- **`for await of`** for async await calls
+  - can iterate over promises
+
+```
+const getData = async function() {
+  const arrayOfPromises = urls.map(url => fetch(url));
+  for await (let request of arrayOfPromises) {
+    const data = await request.json();
+    console.log(data);
+  }
+}
+```
 
 ## ES10 (2019)
 
@@ -348,12 +383,19 @@ const obj = Object.fromEntries(userProfiles)
 let param = obj?.sub-obj?.property;
 ```
 
+- **`.allSettled()`**
+  - `Promise.all()` has to have all promises to succeed
+  - `Promise.allSettled()` returns all promises regardless of status
+
 ## ES2021
 
 - `str.replaceAll(from, to)`
   - replaces all occurrences of `from` to `to`
   - returns replaced string
   - `replace()` only replaces the first occurrence
+- **`.any()`**
+  - returns whatever promises resolves first
+  - if none resolves, it throws an error
 
 ## ES2022
 
@@ -412,16 +454,3 @@ Back in the days each request had spawned a full page refresh. This is waist of 
   - pending
 - uses call back functions (once action happens (listener), do x)
 - promises are resolved **asynchronously**
-
-## Async Await (ES8)
-
-- make code look asynchronous
-
-```
-async function playerStart() {
-  const firstMove = await movePlayer(100, 'Left'); // can store result of action
-  await movePlayer(200, 'Left');
-  await movePlayer(400, 'Right');
-  await movePlayer(100, 'Left');
-}
-```
