@@ -361,3 +361,67 @@ let param = obj?.sub-obj?.property;
   - arrays, strings
   - gets an element at `index`
 - top level await (asynchronous section)
+
+# HTTP(S), AJAX, JSON (Asynchronous JS)
+
+- HTTP is a protocol (standard) that allows the fetching of files
+- foundation of the web
+- clients and servers use it for communication between each other (client request / server response)
+
+## Terminology for CRUD operations (create, read, update, delete)
+
+- `GET` - get entry
+- `POST` - add entry
+- `PUT` - update entry
+- `DELETE` - delete entry
+
+## Response Status Codes:
+
+Used to signal status of specific operations/actions
+
+- 200 -> success
+- 304 -> not modified
+- 404 -> not found
+- ...
+
+Responses are sent either through `query string` or the `body`
+
+## JSON
+
+JavaScript Object Notation
+
+- syntax for storing and exchanging data
+- text, written with JavaScript object notation
+
+## AJAX
+
+Back in the days each request had spawned a full page refresh. This is waist of bandwidth. Content can be created on the fly once data is received from server.
+
+- today covered by `fetch()`
+  - returns a `promise`
+  - the promise needs to be unpacked using `.then(response => response.json()).then(do sth with data)`
+
+## Promises (since ES6)
+
+- a piece of information that may produce a result in the future
+  - result value, or
+  - reason for rejection
+- statuse
+  - fulfilled
+  - rejected
+  - pending
+- uses call back functions (once action happens (listener), do x)
+- promises are resolved **asynchronously**
+
+## Async Await (ES8)
+
+- make code look asynchronous
+
+```
+async function playerStart() {
+  const firstMove = await movePlayer(100, 'Left'); // can store result of action
+  await movePlayer(200, 'Left');
+  await movePlayer(400, 'Right');
+  await movePlayer(100, 'Left');
+}
+```
