@@ -384,8 +384,13 @@ let param = obj?.sub-obj?.property;
 ```
 
 - **`.allSettled()`**
+
   - `Promise.all()` has to have all promises to succeed
   - `Promise.allSettled()` returns all promises regardless of status
+
+- `globalThis`
+  - works outside the browser
+  - unified variable across systems
 
 ## ES2021
 
@@ -403,6 +408,7 @@ let param = obj?.sub-obj?.property;
   - arrays, strings
   - gets an element at `index`
 - top level await (asynchronous section)
+  - `await` keyword can be used without the `async` wrapper
 
 # HTTP(S), AJAX, JSON (Asynchronous JS)
 
