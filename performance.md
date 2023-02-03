@@ -46,5 +46,102 @@
 - always lower JPEG image quality (30-60%)
 - resize image based on size it will be displayed
 - display different sized immages for different backgrounds
-- use CDNs like imigx
-- remove image metadata
+  - media queries (CSS)
+
+```
+@media screen and (min-width: 900px) {
+    ...
+}
+
+@media print and ...
+```
+
+- use CDNs like imigx (content delivery network)
+- remove image metadata (e.g. [verexif](https://www.verexif.com/en/))
+
+### Delivery Man
+
+- limit file sizes
+- limit number of trips (less files)
+
+## Critical Render Path
+
+- brower receives HTML files
+- parses HTML file
+- starts rendering the DOM (contents of page)
+- once encountered style link
+- requests CSS
+- continues working on **DOM tree structure**
+- generates **CSS object model**
+- once it encounters additional logic
+- requests JS file(s)
+- when DOM and CSS-OM are done, thet are combined into a **render tree**
+- then figures out **layout**
+- then **paints** all pixels
+
+DOM -> CSS-OM -> Render Tree -> Layout -> Paint
+
+### Optimisation
+
+1. Loading sequence
+
+- get CSS as soon as possible (render blocking)
+  - keep lightweight as possible
+  - that way user sees something as quickly as possible
+- load JS as late as possible (block simultaneous download of other files)
+  - exception may be Google Analytics tags
+- creates perceived quicker load
+
+2. Load only what's above the fold
+
+- everything that is visible without scrolling
+- include script in body:
+
+```
+<script type="text//javascript">
+    const loadStyleSheet = src => {
+        if (document.createStylesheet) {
+            document.createStylesheet(src); // brower in-built
+        } else {
+            const stylesheet = document.createElement('link');
+            stylesheet.href = src;
+            stylesheet.type = 'text/css';
+            stylesheet.rel = 'stylesheet';
+            document.getElementsByTagName('head')[0].appendChild(stylesheet)
+        }
+    }
+
+    window.onload = function() {
+        console.log('window done!');
+        loadStyleSheet('./style3.css');
+    }
+</script>
+```
+
+3. Media attributes
+
+- can be loaded in HTML as well
+
+```
+<link rel="stylesheet" href="" media="only screen and (min-width: 500px)"> // default for media is "all"
+```
+
+4. Less specificity
+
+- less complex css assignements (less tags per same styling; rather duplicate styling with just 1 tag)
+
+5. async and defer
+
+- `async` (core functionality)
+  - added to script tag will download script on another script
+  - execution of script will be render blocking (DOM blocking)
+  - behaviour might be unpredictable
+  - add to scripts that do not use/need the DOM that are not essential to user
+- `defer` (non-core functionality)
+  - loads asynchronously
+  - execution will wait for DOM rendering to finish
+
+6. Rerendering
+
+- whenever user interactions happen, the render-tree is re-rendered
+- this should be limited to what is necessary to re-load vs. the whole page
