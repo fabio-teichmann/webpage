@@ -1,8 +1,13 @@
 # Redux
 
-State management framework that is often used together with React. Uses **Flux-patter**: _Action -> Dispatcher -> Store -> View_ (uni-directinonal data-flow).
+State management framework that is often used together with React. Uses **Flux-patter**: _Action -> MIDDLEWARE -> Dispatcher -> Store -> View_ (uni-directinonal data-flow).
 
 Can be used in conjunction with React state, does not necessarily replace all React state.
+
+```
+npm install redux
+npm install react-redux
+```
 
 ## When to use
 
@@ -25,3 +30,13 @@ Can be used in conjunction with React state, does not necessarily replace all Re
   - saves changes from Reducer
 - Make changes
   - based on store info
+
+## Asynchronous actions
+
+- applied through middleware
+- `npm install redux-thunk`
+-
+
+## Sources
+
+- [Redux-Toolkit](https://redux-toolkit.js.org/)
