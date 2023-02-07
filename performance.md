@@ -145,3 +145,20 @@ DOM -> CSS-OM -> Render Tree -> Layout -> Paint
 
 - whenever user interactions happen, the render-tree is re-rendered
 - this should be limited to what is necessary to re-load vs. the whole page
+
+## FE Optimisations
+
+- Optimised code
+- Progressive web apps (as close to native mobile apps as possible)
+
+### Optimised Code
+
+- KPIs
+  - time to first meaningful paint
+  - time to interactive
+
+### Code splitting
+
+- serve js code to pages which actually need it
+- use **production build** for 3rd party packages that are used across pages
+  - `npm run build`
