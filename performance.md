@@ -151,6 +151,15 @@ DOM -> CSS-OM -> Render Tree -> Layout -> Paint
 - Optimised code
 - Progressive web apps (as close to native mobile apps as possible)
 
+### Principles
+
+- only load what's needed
+  - code splitting
+  - tree shaking (remove unnecessary code) [source](https://web.dev/reduce-javascript-payloads-with-tree-shaking/)
+- avoid blocking main thread (mostly through JS scripts)
+- avoid memory leaks (we don't keep adding memory into our app)
+- avoid multiple re-rendering
+
 ### Optimised Code
 
 - KPIs
@@ -162,3 +171,32 @@ DOM -> CSS-OM -> Render Tree -> Layout -> Paint
 - serve js code to pages which actually need it
 - use **production build** for 3rd party packages that are used across pages
   - `npm run build`
+- possible to have **component-based** code splitting
+- React Router offers code splitting tools
+
+## Progressive Web-App
+
+- aims to turn web app into native app
+
+**Differences**:
+
+- native apps have all the files they need to run (hence their size)
+- native apps can send push notifications
+- native apps can work offline
+- have access to system files / tools (like camera)
+
+### Components
+
+- HTTPS
+  - use encrypted connection
+  - free resource [let's encrypt](https://letsencrypt.org/docs/)
+  - [cloudflare](https://www.cloudflare.com/en-gb/)
+- App Manifest
+  - need to mimic function and views of a native app -> make it indistinguishable from native app
+  - contains instructions that help interpreting the web app natively
+  - [vieport meta tag](https://developer.chrome.com/docs/lighthouse/pwa/viewport/)
+  - [favicon generator](https://realfavicongenerator.net/)
+- Service Workers
+  - usually for features that don't need user interaction (background)
+  - programmable proxy -> allows to control what happens on a request-by-request basis
+  - `serviceWorker.register()` in `index.js`
