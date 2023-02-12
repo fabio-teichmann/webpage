@@ -28,6 +28,14 @@ class LinkedList {
         return this;
     }
 
+    traverseToIndex(index) {
+        let n = this.head;
+        for (let i = 0; i < index; i++) {
+            n = n.next;
+        }
+        return n;
+    }
+
     insert(index, value) {
         // inserts value at index, i.e. before the element that was at index before.
         // Indeces start at 0 (head).
@@ -38,15 +46,26 @@ class LinkedList {
         } else if (index === 0) {
             this.prepend(value);
         } else {
-            let temp = this.head;
-            for (let i = 0; i < index - 1; i++) {
-                temp = temp.next;
-            }
+            let temp = this.traverseToIndex(index-1);
             const node = new Node(value);
             node.next = temp.next;
             temp.next = node;
             this.length++;
         }
+    }
+
+    remove(index) {
+        if (index >= this.length) {
+            console.log(`No element at index ${index}`);
+            return;
+        }
+        if (index === 0) {
+            this.head = this.head.next;
+        } else {
+            let n = this.traverseToIndex(index-1);
+            n.next = n.next.next;
+        }
+        this.length--;
     }
 
     printList() {
@@ -70,5 +89,8 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 
 myLinkedList.insert(2, 77);
+console.log(myLinkedList.printList());
+
+myLinkedList.remove(2);
 console.log(myLinkedList.printList());
 // console.log(myLinkedList);
