@@ -78,6 +78,39 @@ class LinkedList {
         return array;
     }
 
+    // reverse() {
+    //     if (!this.head.next) {
+    //         return;
+    //     }
+    //     for (let i = this.length; i >= 0 + 2; i--) {
+    //         let n = this.traverseToIndex(i - 2);
+    //         this.tail.next = n.next;
+    //         n.next = n.next.next;
+    //         this.tail = this.tail.next;
+    //         this.tail.next = null;
+    //     } 
+    //     let n = this.head;
+    //     this.tail.next = n;
+    //     this.head = n.next;
+    //     n.next = null;
+    //     this.tail = n;
+    // }
+    reverse() {
+        if (!this.head.next) {
+            return this.head;
+        }
+        let first = this.head;
+        this.tail = this.head;
+        let second = first.next;
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first
+    }
 }
 module.exports = {Node, LinkedList};
 
@@ -92,6 +125,7 @@ myLinkedList.prepend(1);
 myLinkedList.insert(2, 77);
 console.log(myLinkedList.printList());
 
-myLinkedList.remove(2);
+// myLinkedList.remove(2);
+myLinkedList.reverse();
 console.log(myLinkedList.printList());
 // console.log(myLinkedList);
