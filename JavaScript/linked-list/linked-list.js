@@ -79,6 +79,7 @@ class LinkedList {
     }
 
 }
+module.exports = {Node, LinkedList};
 
 const myLinkedList = new LinkedList(10);
 // console.log(myLinkedList)
