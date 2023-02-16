@@ -65,4 +65,38 @@ let fightRobotArmy = (robots: RobotArmy) => {
     console.log('fight');
 }
 
+// type assertions
+interface CatArmy {
+    count: number,
+    type: string,
+    magic?: string // OPTIONAL parameter
+}
+
+let dog = {} as CatArmy;
+dog.count;
+
+// function
+let fightRobotArmy2 = (robots: RobotArmy): number => {
+    console.log('fight');
+    return 5;
+}
+
+// class
+class Animal {
+    private sing: string; // default is public
+    constructor(sound:string) {
+        this.sing = sound;
+    }
+
+    greet() {
+        return `Hello ${this.sing}`;
+    }
+}
+
+let lion = new Animal('RAAWR');
+// lion.sing; --> won't work!
+
+// Union
+let confused: string | number = 'hello';
+
 // export {}; // needed for modules!
