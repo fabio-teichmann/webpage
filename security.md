@@ -87,3 +87,11 @@
 - middleware
 - [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 - [HTTP header fields](https://www.tutorialspoint.com/http/http_header_fields.htm)
+
+## Access control
+
+- having restriction on what authenticated users are allowed to do
+- **principal of least privilige**
+- `cors` middleware important to security (Cross Origin Ressource Sharing)
+  - need to establish cors white list
+  - otherwise access is unrestricted
