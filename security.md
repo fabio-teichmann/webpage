@@ -36,3 +36,12 @@
 
 - ensure that library is trustworthy
 - check popularity (forks, stars, etc.) of package
+- snyk is a tool to test node moudle dependencies
+
+## Logging
+
+- gather all information about user actions/behaviour
+- **insufficient logging** can provide gap for hacker to take actions going unseen
+- 2 packages for JS:
+  - morgan (HTTP logger middleware)
+  - winston (log everything)
