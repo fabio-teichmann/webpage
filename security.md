@@ -79,3 +79,11 @@
     - variables start with `REACT_APP_`
 - commit history
   - NEVER add config files / passwords to git repo
+
+## Secure headers
+
+- `npm install helmet` -> [helmet docu](https://github.com/helmetjs/helmet)
+- on server side (usually for express.js)
+- middleware
+- [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [HTTP header fields](https://www.tutorialspoint.com/http/http_header_fields.htm)
