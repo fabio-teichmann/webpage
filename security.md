@@ -45,3 +45,8 @@
 - 2 packages for JS:
   - morgan (HTTP logger middleware)
   - winston (log everything)
+
+## HTTPS everywhere
+
+- SSL / TLS certificates
+- https://letsencrypt.org/
