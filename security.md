@@ -95,3 +95,15 @@
 - `cors` middleware important to security (Cross Origin Ressource Sharing)
   - need to establish cors white list
   - otherwise access is unrestricted
+
+## Data management
+
+- make sure back-ups are available
+- limit sensitive data exposure
+- encrypt data in transition (based on ressources)
+- hashing tools (passwords)
+  - bcrypt
+  - scrypt
+  - Aragon2
+- encrypt DB (e.g. pgcrypto)
+  - encrypt a few columns
