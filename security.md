@@ -107,3 +107,12 @@
   - Aragon2
 - encrypt DB (e.g. pgcrypto)
   - encrypt a few columns
+
+## Don't trust anyone
+
+- any point in the chain can be attacked
+
+## Authentication
+
+- make sure that user is who he says he is
+- session-based vs. token-based
