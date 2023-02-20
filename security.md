@@ -31,3 +31,8 @@
   - pre-compile SQL statements
   - object relational mappers -> provide statements for us
 - ORMs (object relational mappers) like Knex.js
+
+## 3rd party libraries
+
+- ensure that library is trustworthy
+- check popularity (forks, stars, etc.) of package
