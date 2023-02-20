@@ -68,5 +68,14 @@
 - sanitise inputs
 - no `eval()`
 - no `document.write()`
-- content security policy
-- secure + HTTPOnly cookies
+- [content security policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+- [secure + HTTPOnly cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+## Code secrets
+
+- environmental variables
+  - `process.env.NODE_ENV` by default
+  - can define `.env` file for environmental variables
+    - variables start with `REACT_APP_`
+- commit history
+  - NEVER add config files / passwords to git repo
