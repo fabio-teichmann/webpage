@@ -1,0 +1,33 @@
+# Security
+
+## Important Topics
+
+- injections
+- 3rd party libraries
+- logging
+- HTTPS everywhere
+- XSS & CSRF
+- code secrets
+- secure headers
+- access control
+- data management
+- don't trust anyone
+- authentication
+
+## Injections
+
+- injecting code elsewhere
+  - most famous -> SQL injections
+  - `''; DROP TABLE table_name; --`
+  - `''; or 1=1--` -> for passwords
+- images are injected into DOM after rendering
+- `textnode` can help to textify and sanitise input
+
+### How to avoid
+
+- sanitise input (check inputs for expected inputs)
+  - whitelist vs. blacklist
+- parametrise queries (prepared statements)
+  - pre-compile SQL statements
+  - object relational mappers -> provide statements for us
+- ORMs (object relational mappers) like Knex.js
