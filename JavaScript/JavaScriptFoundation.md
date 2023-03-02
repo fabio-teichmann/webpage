@@ -14,7 +14,7 @@
 
 - parser parses code into tokens (divide by keywords)
 - convert to AST (abstract syntax tree)
-- goes through interpreter (generate bytecode)
+- goes through interpreter (generate bytecode) -> bytecode cannot be understood by machines
 - profiler (monitor); if code is run several times, it gets sent to compiler
 - compiler (optimised code)
 
@@ -30,3 +30,30 @@
   - simplifies / optimises code -> makes resulting code faster
 - all languages need to be interpreted and compiled
 - JIT compiler combines both
+
+## Writing optimised code
+
+Knowing how the compiler works, we can ensure that written code enables it to optimise best.
+
+### Be careful with
+
+- `eval()`
+- arguments
+- `for in`
+- `with` (not seen often)
+- `delete`
+
+### Reasons
+
+- inline caching (done by compiler)
+  - saves data that is used multiple times
+- hidden classes
+  - instantiate object properties in the SAME order
+  - otherwise the compiler will instantiate separate hidden classes to deal with them
+
+## WebAssembly
+
+- standard binary executable format
+- https://webassembly.org/
+
+## Call stack and memory heap
