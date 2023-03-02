@@ -14,11 +14,19 @@
 
 - parser parses code into tokens (divide by keywords)
 - convert to AST (abstract syntax tree)
-- goes through interpreter, profiler, compiler
-- generates bytecode
+- goes through interpreter (generate bytecode)
+- profiler (monitor); if code is run several times, it gets sent to compiler
+- compiler (optimised code)
 
 ## Interpreter and Compiler
 
-- interpreter: translate and read file line by line (on the fly)
-- compiler: works ahead of time to create computer readable code; translates to another language (lower level language)
+- interpreter:
+  - translate and read file line by line (on the fly)
+  - quick to get up and running
+  - when running code more than once -> can get really slow
+- compiler:
+  - works ahead of time to create computer readable code; translates to another language (lower level language)
+  - takes more time to get up and running
+  - simplifies / optimises code -> makes resulting code faster
 - all languages need to be interpreted and compiled
+- JIT compiler combines both
