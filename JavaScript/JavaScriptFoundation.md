@@ -57,3 +57,19 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 - https://webassembly.org/
 
 ## Call stack and memory heap
+
+- needs to allocate memory (memory heap)
+- keep track of position in code (call stack)
+
+### Memory heap
+
+- unordered storage
+- big area available to store
+
+### Call stack
+
+- adds functions to run onto the heap as they appear (FILO)
+  - stored in stack frame
+  - stores variables and functions
+- starts with Global Execution Context
+- pops functions from heap as they are executed
