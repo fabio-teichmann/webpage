@@ -79,3 +79,25 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 - fill up memory heap with variables (e.g. continue pushing to an array)
 - `eventListeners` are a common example
 - `setInterval(() => {...})`
+
+## Single threaded
+
+- only 1 call stack
+- only 1 function executed at a time
+  -> JS as of itself is synchronous
+
+## JavaScript Runtime
+
+- web browser uses Web API in the background (asynchronous)
+  - sent HTTP request
+  - events
+  - caching
+  - timeouts
+- Event Loop manages callback queue for work done by Web API
+  - pushes work done back to the stack (once it's empty)
+
+### Node.js
+
+- Node.js is a JS runtime
+- written in C++
+- does more than the browser (e.g. accessing file systems)
