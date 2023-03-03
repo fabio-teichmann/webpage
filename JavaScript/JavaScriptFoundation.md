@@ -73,3 +73,9 @@ Knowing how the compiler works, we can ensure that written code enables it to op
   - stores variables and functions
 - starts with Global Execution Context
 - pops functions from heap as they are executed
+
+## Memory leak
+
+- fill up memory heap with variables (e.g. continue pushing to an array)
+- `eventListeners` are a common example
+- `setInterval(() => {...})`
