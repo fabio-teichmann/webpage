@@ -120,3 +120,24 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 - JS engine allocates memory to variables and functions before execution
 - variables are partially hoisted (only names)
 - functions are completely hoisted
+
+## Function invocation
+
+- when invoked we receive / create
+  - `this` keyword
+  - `arguments` (object with function parameters) -> only within functional execution contexts
+
+### Arguments keyword
+
+- avoid for compiler optimisation
+- use `Array.from(arguments)` to make arguments accesible in array shape
+- use `functionName(...args){}` to receive multiple function parameters
+
+## Variable environment
+
+- available according to their scope
+
+## Scope chain
+
+- each execution context is connected to its parent context (e.g. global)
+- for nested functions, child functions have access to their parent environments
