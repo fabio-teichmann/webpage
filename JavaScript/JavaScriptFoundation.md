@@ -109,3 +109,14 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 - `global()` is the base execution context
   - gives access to `this` keyword
   - gives access to Global Object (window in browser, global for Node.js)
+
+## Lexical environment
+
+- at compile time
+- where is code written? (scope)
+
+## Hoisting
+
+- JS engine allocates memory to variables and functions before execution
+- variables are partially hoisted (only names)
+- functions are completely hoisted
