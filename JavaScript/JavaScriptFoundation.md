@@ -101,3 +101,11 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 - Node.js is a JS runtime
 - written in C++
 - does more than the browser (e.g. accessing file systems)
+
+## Execution context
+
+- whenever a function is calles ()
+- creates an execution context for each function
+- `global()` is the base execution context
+  - gives access to `this` keyword
+  - gives access to Global Object (window in browser, global for Node.js)
