@@ -150,3 +150,21 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 
 - JS uses function scope (`var`) -> variables are inaccessible outside of functions but accesible outside of blocks
 - when using `let` or `const`, the scope is block scope (only within `if` for example)
+
+## IIFE (immediately invoked function expression)
+
+`(function () {...})();`
+
+- function expression (not function declaration)
+- anonymous function
+- immediately invoked
+- creates new execution context
+- avoids name space pollution
+
+## `call()`, `apply()`, `bind()`
+
+- call and apply are properties to enable function calls
+- call can be used to call a function from an object on another object
+  - `call(obj, ...agrs[])` call on obj with params args
+- bind stores functionality for later use
+  - can be stored in variable and then be called once necessary
