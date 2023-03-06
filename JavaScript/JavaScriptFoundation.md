@@ -141,3 +141,12 @@ Knowing how the compiler works, we can ensure that written code enables it to op
 
 - each execution context is connected to its parent context (e.g. global)
 - for nested functions, child functions have access to their parent environments
+
+## Leakage of global variables
+
+- use `'use strict'` at the top of the document to avoid undeclared varibales within functions get assigned to global variable space
+
+## Block scope
+
+- JS uses function scope (`var`) -> variables are inaccessible outside of functions but accesible outside of blocks
+- when using `let` or `const`, the scope is block scope (only within `if` for example)
