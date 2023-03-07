@@ -59,3 +59,17 @@ let obj3 = {...obj1};
 // deep cloning - can have performance implications!
 let obj4 = JSON.parse(JSON.stringify(obj1))
 ```
+
+## Type coercion
+
+- JS engine converts types in expressions in some cases (e.g. for comparisons)
+- all languages have type coercion
+- in JS use `==` for type coercion
+
+## Weakly typed
+
+- coerces types based on desired operation (e.g. int to string)
+
+## Strongly typed
+
+- doesn't allow for this type coercion
