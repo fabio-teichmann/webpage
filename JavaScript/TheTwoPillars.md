@@ -83,3 +83,15 @@ for (var i = 0; i < array.length; i++) {
     })(i)
 }
 ```
+
+## Prototypal inheritance
+
+-> object getting access to the properties and methods of another object
+
+- cann move up the chain using `obj.__proto__`
+- `class` is also a form of prototypal inheritance
+- using `obj.__proto__ = obj2;` we can inherit properties from obj2 -> changing the chain
+- `__proto__` points to `parent.prototype`
+- only functions have the `prototype` property
+  - `typeof(Object) === function`
+- `Object.prototype` is the base case (after that only null)
