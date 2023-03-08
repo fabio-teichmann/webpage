@@ -168,3 +168,9 @@ Knowing how the compiler works, we can ensure that written code enables it to op
   - `call(obj, ...agrs[])` call on obj with params args
 - bind stores functionality for later use
   - can be stored in variable and then be called once necessary
+- bind can provide partial parameters to functions and returns function (currying)
+
+```
+let placeholder = functionName.bind(this, param1);
+placeholder(param2);
+```
