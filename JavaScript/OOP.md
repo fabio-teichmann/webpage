@@ -61,3 +61,10 @@ Help to write code that is
 ## Public vs. private
 
 - since ES2022 privacy available as `#name` for both parameters and methods
+
+## 4 pillars of OOP
+
+1. **encapsulation** (puts functionalities into an object/container)
+2. **abstraction** (hiding complexity from user)
+3. **inheritance** (avoid rewriting code and save memory space)
+4. **polymorhpism** (appear in "many forms" / overwriting methods; call method on different objects but objects respond differently)
