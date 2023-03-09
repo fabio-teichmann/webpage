@@ -52,3 +52,12 @@ Help to write code that is
   - binds to where it is written
 
 ## Inheritance
+
+- new class declaration using `extends SuperClass`
+- inherits all properties and methods from super class
+- needs `super()` within its constructor
+- links up the prototype chain (not copying)
+
+## Public vs. private
+
+- since ES2022 privacy available as `#name` for both parameters and methods
