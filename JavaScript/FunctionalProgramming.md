@@ -78,3 +78,14 @@ const compose = (f, g) => (data) => f(g(data));
 
 - number of arguments a function takes
 - the lower the arity the easier to understand / debug / etc.
+
+## Composition vs. inheritance
+
+- inheritance
+  - focuses on "what it is"
+  - coupling between super and child classes can have rippling effects (tightly coupled)
+  - fragile base class problem -> can break code
+  - hierarchy can be too rigid
+- composition
+  - focuses on "what it has"
+  - can add functionality to object in a modular way (more flexible)
